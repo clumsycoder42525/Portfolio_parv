@@ -180,6 +180,12 @@ body::before {
   text-shadow: 0 0 12px rgba(255,61,0,0.45);
   transform: translateY(-1px);
 }
+.resume-btn {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 /* ================= HERO ================= */
@@ -205,6 +211,13 @@ body::before {
   max-width: 520px;
   color: #fbf6f6;
 }
+.resume-btn {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* hero right image */
 /* ================= ANIMATED ACCENT TEXT ================= */
 
