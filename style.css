@@ -295,18 +295,22 @@ body::before {
 /* ================= PROJECTS ================= */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  align-items: stretch;
 }
 
 .project-card {
-  height: 260px;
+  height: 320px;
   background: #111;
   text-decoration: none;
   color: #fff;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
 }
+
 
 .overlay {
   position: absolute;
@@ -329,18 +333,20 @@ body::before {
 
 /* image on top */
 .project-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 55%;
-  object-fit: cover;
-  display: block;
+  height: 100%;
+  object-fit: cover;         
+  filter: brightness(0.55);
 }
 
-/* overlay thoda neeche shift */
 .project-card .overlay {
-  position: absolute;
-  bottom: 0;
-  height: 55%;
+  position: relative;
+  z-index: 2;
+  padding: 30px;
 }
+
 
 /* ================= LIST PROJECTS ================= */
 .list-projects {
@@ -1011,3 +1017,4 @@ body::before {
     grid-template-columns: 1fr;
   }
 }
+
