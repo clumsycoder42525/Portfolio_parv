@@ -993,3 +993,313 @@ body::after{
   }
 
 }
+/* ================= CURSOR GLOW ================= */
+
+.cursor-glow{
+
+  position:fixed;
+
+  width:320px;
+  height:320px;
+
+  border-radius:50%;
+
+  background:radial-gradient(
+    circle,
+    rgba(124,77,255,0.18),
+    rgba(0,212,255,0.10),
+    transparent 70%
+  );
+
+  pointer-events:none;
+
+  transform:translate(-50%, -50%);
+
+  z-index:-1;
+
+  transition:
+  left 0.08s linear,
+  top 0.08s linear;
+}
+
+/* ================= TYPING EFFECT ================= */
+
+.typing-text{
+
+  margin-top:24px;
+
+  font-size:1.3rem;
+
+  font-weight:700;
+
+  color:var(--secondary);
+
+  min-height:40px;
+
+  letter-spacing:0.5px;
+}
+
+.typing::after{
+
+  content:"|";
+
+  animation:blink 0.8s infinite;
+}
+
+@keyframes blink{
+
+  50%{
+    opacity:0;
+  }
+
+}
+
+/* ================= FLOATING PARTICLES ================= */
+
+.particles{
+
+  position:fixed;
+
+  inset:0;
+
+  overflow:hidden;
+
+  z-index:-2;
+
+  pointer-events:none;
+}
+
+.particle{
+
+  position:absolute;
+
+  bottom:-20px;
+
+  width:4px;
+  height:4px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.35);
+
+  animation:floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+
+  from{
+
+    transform:
+    translateY(0)
+    scale(1);
+
+    opacity:0;
+
+  }
+
+  10%{
+    opacity:1;
+  }
+
+  to{
+
+    transform:
+    translateY(-120vh)
+    scale(0);
+
+    opacity:0;
+
+  }
+
+}
+
+/* ================= PREMIUM HOVER EFFECT ================= */
+
+.project-card,
+.achievement-card{
+
+  transform-style:preserve-3d;
+
+  will-change:transform;
+
+  transition:
+  transform 0.25s ease,
+  box-shadow 0.4s ease,
+  border-color 0.4s ease;
+}
+
+/* ================= GLASS REFLECTION ================= */
+
+.project-card::before,
+.achievement-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:linear-gradient(
+    120deg,
+    rgba(255,255,255,0.12),
+    transparent 35%
+  );
+
+  opacity:0;
+
+  transition:0.5s ease;
+
+  z-index:1;
+}
+
+.project-card:hover::before,
+.achievement-card:hover::before{
+  opacity:1;
+}
+
+/* ================= SECTION REVEAL ================= */
+
+.reveal{
+
+  opacity:0;
+
+  transform:
+  translateY(70px)
+  scale(0.96);
+
+  transition:
+  opacity 1s ease,
+  transform 1s ease;
+}
+
+.reveal.show{
+
+  opacity:1;
+
+  transform:
+  translateY(0)
+  scale(1);
+}
+
+/* ================= BUTTON GLOW ================= */
+
+.btn,
+.demo-btn{
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.btn::after,
+.demo-btn::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-2px;
+
+  background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary),
+    var(--accent),
+    var(--primary)
+  );
+
+  background-size:300%;
+
+  z-index:-1;
+
+  filter:blur(18px);
+
+  opacity:0;
+
+  transition:0.4s ease;
+
+  animation:gradientMove 5s linear infinite;
+}
+
+.btn:hover::after,
+.demo-btn:hover::after{
+  opacity:1;
+}
+
+@keyframes gradientMove{
+
+  0%{
+    background-position:0%;
+  }
+
+  100%{
+    background-position:300%;
+  }
+
+}
+
+/* ================= HERO TITLE EFFECT ================= */
+
+.hero-left h1{
+
+  text-shadow:
+  0 0 20px rgba(124,77,255,0.25),
+  0 0 50px rgba(0,212,255,0.08);
+}
+
+/* ================= ACHIEVEMENT BADGE ================= */
+
+.achievement-badge{
+
+  display:inline-flex;
+
+  margin-top:22px;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  background:rgba(124,77,255,0.14);
+
+  border:1px solid rgba(124,77,255,0.28);
+
+  color:#dbe2ff;
+
+  font-size:0.88rem;
+
+  font-weight:600;
+}
+
+/* ================= PREMIUM GRID LINES ================= */
+
+body::after{
+
+  opacity:0.45;
+}
+
+/* ================= NAVBAR BLUR ================= */
+
+.nav{
+
+  backdrop-filter:blur(24px);
+
+  -webkit-backdrop-filter:blur(24px);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  .cursor-glow{
+    display:none;
+  }
+
+  .hero-left h1{
+    font-size:4.2rem;
+  }
+
+  .typing-text{
+    font-size:1.05rem;
+  }
+
+}
