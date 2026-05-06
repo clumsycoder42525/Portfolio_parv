@@ -1303,3 +1303,19 @@ body::after{
   }
 
 }
+.section{
+  position: relative;
+  z-index: 2;
+}
+
+.reveal.show{
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.project-card,
+.achievement-card,
+.contact-item,
+.skill-box{
+  opacity: 1 !important;
+}
